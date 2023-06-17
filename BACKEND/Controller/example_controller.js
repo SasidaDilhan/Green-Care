@@ -4,9 +4,9 @@ const catchAsync = require("../Utils/catchAsync");
 exports.createStudent = catchAsync(async (req, res, next) => {
   console.log(req.body);
   let added_student = await Student.create(req.body);
-  res.Student(201).json({
+  res.status(201).json({
     status: "success",
-    Student: {
+    student: {
       added_student,
     },
   });
@@ -14,11 +14,11 @@ exports.createStudent = catchAsync(async (req, res, next) => {
 
 //get all students
 exports.getAllStudent = catchAsync(async (req, res, next) => {
-  let all_students = await Student.findAll({ user: req.body });
+  let all_students = await Student.find({ user: req.body });
 
-  res.Student(201).json({
+  res.status(201).json({
     status: "success",
-    Student: {
+    student: {
       all_students,
     },
   });
@@ -28,9 +28,9 @@ exports.getAllStudent = catchAsync(async (req, res, next) => {
 exports.getStudent = catchAsync(async (req, res, next) => {
   let spesificStudetent = await Student.findById(req.params.id);
 
-  res.Student(201).json({
+  res.status(201).json({
     status: "success",
-    Student: {
+    student: {
       spesificStudetent,
     },
   });
@@ -40,9 +40,9 @@ exports.getStudent = catchAsync(async (req, res, next) => {
 exports.updateStudent = catchAsync(async (req, res, next) => {
   let updateStudent = await Student.findByIdAndUpdate(req.params.id);
 
-  res.Student(201).json({
+  res.status(201).json({
     status: "success",
-    Student: {
+    student: {
       updateStudent,
     },
   });
@@ -52,9 +52,9 @@ exports.updateStudent = catchAsync(async (req, res, next) => {
 exports.deleteStudent = catchAsync(async (req, res, next) => {
   let deleteStudent = await Student.findByIdAndDelete(req.params.id);
 
-  res.Student(201)({
+  res.status(201)({
     status: "success",
-    Student: {
+    student: {
       deleteStudent,
     },
   });
