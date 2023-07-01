@@ -1,5 +1,5 @@
 import React from "react";
-import Register_routes from "./routes/Register_routes";
+import Register_routes from "./routes/register_routes";
 
 export default function Router() {
   return (
