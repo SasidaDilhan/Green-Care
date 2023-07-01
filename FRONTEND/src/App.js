@@ -1,11 +1,12 @@
+import Router from "./router";
+
 import React from "react";
-import Register from "../Components/Register";
 
 function App() {
   return (
-    <main className="App">
-      <Register />
-    </main>
+    <div>
+      <Router />
+    </div>
   );
 }
 
