@@ -1,10 +1,11 @@
 import React from "react";
+import Register from "../Components/Register";
 
 function App() {
   return (
-    <div>
-      <h1>hello web</h1>
-    </div>
+    <main className="App">
+      <Register />
+    </main>
   );
 }
 
