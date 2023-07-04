@@ -7,6 +7,12 @@
   width: 95%;
   height: 80px;
   border-radius: 13px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+  background-color: #06d6a0;
 }
 .navbar-logo {
   color: black;
@@ -33,7 +39,7 @@
   padding-right: 10px;
 }
 .nav-links:hover {
-  background-color: #01959a;
+  background-color: #0b7357;
   color: white;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
@@ -79,11 +85,14 @@ button:hover {
     padding: 80px 0 30px 0;
     margin: 0;
     text-align: center;
+    transition: 0.3s ease-in-out;
+    border-radius: 13px;
   }
   .nav-menu.active {
     left: 0;
     opacity: 1;
     z-index: -1;
+    transition: 0.3s ease-in-out;
   }
 
   .nav-links {
@@ -114,6 +123,7 @@ button:hover {
   }
   .menu-icons {
     display: block;
+    cursor: pointer;
   }
   .menu-icons i {
     font-size: 1.2rem;
