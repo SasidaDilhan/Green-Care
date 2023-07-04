@@ -1,15 +1,18 @@
 import React from "react";
 import "./Hero.css";
-import hero1 from "../../Assests/hero/1.png";
+import { Link } from "react-router-dom";
 
-function Hero() {
+function Hero(props) {
   return (
     <>
-      <div className="hero">
-        <img src={hero1} alt="Hero image 1" />
+      <div className={props.cName}>
+        <img src={props.heroImg} alt="hero imge one" />
         <div className="hero-text">
-          <h1>Start your journy</h1>
-          <p>Chose your best parner</p>
+          <h1>{props.title}</h1>
+          <p>{props.text}</p>
+          <Link to={props.url} className={props.btnClass}>
+            <button className="btnhero">{props.btnText}</button>
+          </Link>
         </div>
       </div>
     </>

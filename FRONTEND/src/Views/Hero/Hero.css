@@ -1,3 +1,37 @@
+.hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 img {
   width: 100%;
+  object-fit: cover;
+}
+.btnhero {
+  background-color: #06d6a0;
+}
+.btnhero:hover {
+  background-color: #175c4a;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.hero-text {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  width: 30%;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background-color: #18392b;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-text p {
+  font-size: 1.3rem;
+  color: #18392b;
+  padding: 0.5rem 0 2rem 0;
 }
