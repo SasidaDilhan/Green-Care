@@ -17,7 +17,7 @@ function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src={img1} className="d-block w-100 img" alt="..." />
-            <div className="centered">
+            <div className="button-container">
               <button type="button" className="btn btn-primary">
                 Primary
               </button>
