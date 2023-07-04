@@ -1,12 +1,13 @@
 import React from "react";
 import NavBar from "../Components/NavBar/NavBar";
+import Hero from "../Views/Hero/Hero";
 
 function Home() {
   return (
-    <div>
+    <>
       <NavBar />
-      <h1>This Is Home Page</h1>
-    </div>
+      <Hero />
+    </>
   );
 }
 
