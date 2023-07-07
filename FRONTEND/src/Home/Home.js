@@ -13,7 +13,7 @@ function Home() {
         title="Your journy is here"
         text="Come collabarate with us"
         btnText="Register"
-        url="/"
+        url="/register"
         btnClass="btn-link"
       />
     </>

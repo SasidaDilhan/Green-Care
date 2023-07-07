@@ -37,8 +37,15 @@ img {
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 2px;
+  color: black;
 }
-@media screen and (max-width: 950px) {
+.btn-link:hover {
+  background-color: #16b430;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 550px) {
   .hero-text h1 {
     padding: 10px 20px;
   }
@@ -51,10 +58,4 @@ img {
     border-radius: 6px;
     font-size: 1rem;
   }
-}
-
-.btn-link:hover {
-  background-color: #16b430;
-  color: white;
-  transition: all 0.2s ease-in-out;
 }
