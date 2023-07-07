@@ -39,7 +39,7 @@
   padding-right: 10px;
 }
 .nav-links:hover {
-  background-color: #0b7357;
+  background-color: #16b430;
   color: white;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
@@ -56,17 +56,17 @@ button {
   border: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
-  background-color: #64e48e;
+  background-color: #06d6a0;
 }
 button:hover {
-  background-color: #0b7357;
+  background-color: #16b430;
   color: #fff;
 }
 .menu-icons {
   display: none;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .NavbarItems {
     z-index: 99;
   }
