@@ -2,14 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const fs = require("fs");
-const app = express();
 const User = require("./Models/user/UserRegister_model");
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 const exampleRouter = require("./Routes/example_route");
 
 const AppError = require("./Utils/AppError");
 const HttpError = require("./Utils/http-error");
+
+const app = express();
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("Server Running");
@@ -67,7 +70,7 @@ app.post("/register", async (req, res) => {
     user.token = token;
     user.password = undefined;
 
-    res.status(200).json(user);
+    res.status(201).json(user);
   } catch (error) {
     console.log(error);
   }
@@ -76,8 +79,41 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   try {
     //get all data from frontend
+    const { email, password } = req.body;
+    //validation
+    if (!(email && password)) {
+      res.status(400).send("Fields are empty");
+    }
     //find user in DB
+    const user = await User.findOne({ email });
+    const matchingPassword = await bcrypt.compare(password, user.password);
+    //if user not there and password not match
+    if (user && matchingPassword) {
+      //res.status(401).send("user is not registered");
+
+      const token = jwt.sign(
+        { id: user._id },
+        "This is secret", //process.env.jwtsecret
+        {
+          expiresIn: "2h",
+        }
+      );
+      user.token = token;
+      user.password = undefined;
+
+      //send token via cookie
+      //cookie section
+      const options = {
+        expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), //3days, 24hours, 60minutes, 60 seconds, 1000milisec
+        httpOnly: true,
+      };
+      response.status(200).cookie("token", token, options).json({
+        success: true,
+        token,
+      });
+    }
     //match the password
+
     //send the token
   } catch (error) {
     console.log(error);
