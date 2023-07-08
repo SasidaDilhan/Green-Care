@@ -6,6 +6,7 @@ import Home from "../Home/Home";
 import Service from "../Views/Servise/Service";
 import About from "../Views/About/About";
 import Contact from "../Views/Contact/Contact";
+import Cart from "../Views/cart/Cart";
 
 function RegisterRoutes() {
   return (
@@ -18,6 +19,7 @@ function RegisterRoutes() {
           <Route path="/service" exact element={<Service />}></Route>
           <Route path="/about" exact element={<About />}></Route>
           <Route path="/contact" exact element={<Contact />}></Route>
+          <Route path="/cart" exact element={<Cart />}></Route>
         </Routes>
       </Router>
     </div>
