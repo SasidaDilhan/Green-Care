@@ -22,6 +22,10 @@ const registerSchema = new mongoose.Schema({
   password: {
     type: String,
   },
+  token: {
+    type: String,
+    default: null,
+  },
 });
 
 const user = mongoose.model("User", registerSchema);
