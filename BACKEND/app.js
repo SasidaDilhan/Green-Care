@@ -78,8 +78,10 @@ app.post("/login", async (req, res) => {
     //get all data from frontend
     //find user in DB
     //match the password
-    //
-  } catch (error) {}
+    //send the token
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = app;
