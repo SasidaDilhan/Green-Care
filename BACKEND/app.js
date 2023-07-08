@@ -67,10 +67,19 @@ app.post("/register", async (req, res) => {
     user.token = token;
     user.password = undefined;
 
-    res.status(200).json({ user });
+    res.status(200).json(user);
   } catch (error) {
     console.log(error);
   }
+});
+
+app.post("/login", async (req, res) => {
+  try {
+    //get all data from frontend
+    //find user in DB
+    //match the password
+    //
+  } catch (error) {}
 });
 
 module.exports = app;
