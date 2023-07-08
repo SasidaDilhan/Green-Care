@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 
 const exampleRouter = require("./Routes/example_route");
+const registerRouter = require("./Routes/user/register_router");
 
 const AppError = require("./Utils/AppError");
 const HttpError = require("./Utils/http-error");
@@ -31,6 +32,7 @@ const base = "/api/v1";
 app.use(express.json({ limit: "10kb" }));
 
 app.use(`${base}/example`, exampleRouter);
+app.use(`${base}/register`, registerRouter);
 
 app.post("/register", async (req, res) => {
   try {
@@ -53,8 +55,8 @@ app.post("/register", async (req, res) => {
       last_name: lastname,
       phone_number: phone,
       nic_number: nic,
-      address,
-      email,
+      address: address,
+      email: email,
       password: myEncryptedPassword,
     });
 
@@ -68,7 +70,7 @@ app.post("/register", async (req, res) => {
       }
     );
     user.token = token;
-    user.password = undefined;
+    // user.password = undefined;
 
     res.status(201).json(user);
   } catch (error) {
