@@ -5,16 +5,37 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Register() {
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    phoneNumber: "",
+    addresss1: "",
+    address2: "",
+  });
+
+  const registerUser = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="div1">
       <div className="div2">
-        <Form>
+        <Form onSubmit={registerUser}>
           <Row className="row1 mb-3">
             <Form.Group as={Col} controlId="formGridFname">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="email" placeholder="First Name" />
+              <Form.Control
+                type="text"
+                placeholder="First Name"
+                value={data.firstName}
+                onChange={(e) =>
+                  setData({ ...data, firstName: e.target.value })
+                }
+              />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridLnamed">

@@ -3,10 +3,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 function Signup() {
+  const loginUser = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="div1">
       <div className="div2">
-        <Form>
+        <Form onSubmit={loginUser}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
