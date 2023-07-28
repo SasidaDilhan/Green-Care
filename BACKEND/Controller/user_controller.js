@@ -23,13 +23,22 @@ exports.createUser = catchAsync(async (req, res, next) => {
   });
 });
 //get all users
-exports.getAllUsers = catchAsync(async (res, req, next) => {
-  let all_users = await Register.find({ user: req.body });
+// exports.getAllUsers = catchAsync(async (res, req, next) => {
+//   let all_users = await Register.find({ user: req.body });
+//   res.status(201).json({
+//     status: "success",
+//     user: {
+//       all_users,
+//     },
+//   });
+// });
+exports.getAllUsers = catchAsync(async (req, res, next) => {
+  let all_students = await Register.find({ user: req.body });
 
   res.status(201).json({
     status: "success",
-    user: {
-      all_users,
+    student: {
+      all_students,
     },
   });
 });

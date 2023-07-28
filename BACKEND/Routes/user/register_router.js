@@ -8,10 +8,10 @@ router
   .get(RegisterController.getAllUsers)
   .post(RegisterController.createUser);
 
-// router
-//   .route("/:id")
-//   .get(studentController.getStudent)
-//   .patch(studentController.updateStudent)
-//   .delete(studentController.deleteStudent);
+router
+  .route("/:id")
+  .get(RegisterController.oneUser)
+  .patch(RegisterController.updateUser1)
+  .delete(RegisterController.deleteUser1);
 
 module.exports = router;
