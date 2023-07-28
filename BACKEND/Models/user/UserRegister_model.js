@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const registerSchema = new mongoose.Schema({
-  first_name: {
+  firstname: {
     type: String,
   },
-  last_name: {
+  lastname: {
     type: String,
   },
   email: {
     type: String,
   },
-  phone_number: {
+  phonenumber: {
     type: Number,
   },
-  nic_number: {
+  nicnumber: {
     type: String,
   },
   address: {
@@ -21,10 +21,6 @@ const registerSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-  },
-  token: {
-    type: String,
-    default: null,
   },
 });
 
