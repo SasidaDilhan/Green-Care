@@ -1,18 +1,27 @@
 const Register = require("../Models/user/UserRegister_model");
 const catchAsync = require("../Utils/catchAsync");
 
-exports.createUser = catchAsync(async (res, req, next) => {
+// exports.createUser = catchAsync(async (res, req, next) => {
+//   console.log("methana inne hutto");
+//   console.log(req.body);
+//   let added_user = await Register.create(req.body);
+//   res.status(201).json({
+//     status: "success",
+//     user: {
+//       added_user,
+//     },
+//   });
+// });
+exports.createUser = catchAsync(async (req, res, next) => {
   console.log(req.body);
-
-  let added_user = await Register.create(req.body);
+  let added_student = await Register.create(req.body);
   res.status(201).json({
     status: "success",
-    user: {
-      added_user,
+    student: {
+      added_student,
     },
   });
 });
-
 //get all users
 exports.getAllUsers = catchAsync(async (res, req, next) => {
   let all_users = await Register.find({ user: req.body });

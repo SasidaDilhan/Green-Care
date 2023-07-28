@@ -1,17 +1,17 @@
 const express = require("express");
-const registerController = require("../../Controller/user_controller");
+const RegisterController = require("../../Controller/user_controller");
 
 const router = express.Router();
 
 router
   .route("/")
-  .get(registerController.getAllUsers)
-  .post(registerController.createUser);
+  .get(RegisterController.getAllUsers)
+  .post(RegisterController.createUser);
 
-router
-  .route("/:id")
-  .get(registerController.oneUser)
-  .patch(registerController.updateUser1)
-  .delete(registerController.deleteUser1);
+// router
+//   .route("/:id")
+//   .get(studentController.getStudent)
+//   .patch(studentController.updateStudent)
+//   .delete(studentController.deleteStudent);
 
 module.exports = router;
