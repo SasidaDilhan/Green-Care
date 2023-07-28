@@ -32,6 +32,6 @@ const base = "/api/v1";
 app.use(express.json({ limit: "10kb" }));
 
 app.use(`${base}/example`, exampleRouter);
-app.use(`${base}/register`, registerRouter);
+app.use(`${base}/register2`, registerRouter);
 
 module.exports = app;

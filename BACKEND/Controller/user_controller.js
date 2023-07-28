@@ -1,5 +1,5 @@
-const Register = require("../../Models/user/UserRegister_model");
-const catchAsync = require("../../Utils/catchAsync");
+const Register = require("../Models/user/UserRegister_model");
+const catchAsync = require("../Utils/catchAsync");
 
 exports.createUser = catchAsync(async (res, req, next) => {
   console.log(req.body);
